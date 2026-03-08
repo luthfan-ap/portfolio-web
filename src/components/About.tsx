@@ -1,7 +1,7 @@
 const stats = [
-    { value: "6+", label: "Semesters" },
+    { value: "2026", label: "Expected Graduation" },
     { value: "10+", label: "Projects Built" },
-    { value: "5+", label: "Tech Articles" },
+    { value: "3+", label: "Tech Articles" },
 ];
 
 export default function About() {
@@ -22,20 +22,14 @@ export default function About() {
                         <span className="text-white font-semibold">
                             Luthfan Aryananda Purwito
                         </span>
-                        , an Information Systems undergraduate from Indonesia passionate
-                        about <span className="text-primary-400">database systems</span>{" "}
-                        and building things that work at scale.
+                        , an Information Systems undergraduate specializing in data engineering and systems architecture. I'm passionate about building efficient data solutions.
                     </p>
                     <p className="text-slate-400 leading-relaxed mb-6">
-                        I actively explore the realms of data engineering, database internals,
-                        and distributed systems — not just through coursework, but by building
-                        real systems. From crafting a database engine from scratch to designing
-                        distributed key-value stores, I learn by doing.
+                        I actively explore data engineering, database internals, and distributed systems — not just through coursework, but by building real systems. From crafting a database engine from scratch to designing distributed key-value stores, I learn by doing.
                     </p>
                     <p className="text-slate-400 leading-relaxed">
-                        When I'm not knee-deep in system design, I write technical articles
-                        breaking down complex data engineering concepts, and I maintain a
-                        "digital garden" where I track experiments and learnings.
+                        When I'm not feeling into practical, I write technical articles in Medium
+                        breaking down complex data engineering concepts, to track and share my knowledge and learnings.
                     </p>
                 </div>
 

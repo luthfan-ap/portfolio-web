@@ -35,7 +35,7 @@ export default function Navbar() {
                             </a>
                         ))}
                         {/* Social Icons */}
-                        <div className="hidden md:flex items-center gap-1 ml-4">
+                        <div className="flex items-center gap-1 ml-4">
                             <a
                                 href="https://github.com/luthfan-ap"
                                 target="_blank"
@@ -70,62 +70,62 @@ export default function Navbar() {
                                 </svg>
                             </a>
                         </div>
-
-                        {/* Mobile Hamburger */}
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="md:hidden p-2 text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
-                            aria-label="Toggle menu"
-                        >
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                {isOpen ? (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                ) : (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                )}
-                            </svg>
-                        </button>
                     </div>
 
-                    {/* Mobile Menu */}
-                    {isOpen && (
-                        <div className="md:hidden pb-4 border-t border-white/5 mt-2 pt-3">
-                            {navLinks.map((link) => (
-                                <a
-                                    key={link.href}
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="block px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
-                                >
-                                    {link.label}
-                                </a>
-                            ))}
-                            <a
-                                href="https://github.com/luthfan-ap"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="block mx-4 mt-2 px-4 py-2.5 text-sm font-medium text-center text-white bg-primary-400/15 border border-primary-400/30 rounded-lg"
-                            >
-                                GitHub →
-                            </a>
-                        </div>
-                    )}
+                    {/* Mobile Hamburger */}
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className="md:hidden p-2 text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
+                        aria-label="Toggle menu"
+                    >
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            {isOpen ? (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            ) : (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                />
+                            )}
+                        </svg>
+                    </button>
                 </div>
+
+                {/* Mobile Menu */}
+                {isOpen && (
+                    <div className="md:hidden pb-4 border-t border-white/5 mt-2 pt-3">
+                        {navLinks.map((link) => (
+                            <a
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => setIsOpen(false)}
+                                className="block px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
+                            >
+                                {link.label}
+                            </a>
+                        ))}
+                        <a
+                            href="https://github.com/luthfan-ap"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block mx-4 mt-2 px-4 py-2.5 text-sm font-medium text-center text-white bg-primary-400/15 border border-primary-400/30 rounded-lg"
+                        >
+                            GitHub →
+                        </a>
+                    </div>
+                )}
             </div>
         </nav>
     );
