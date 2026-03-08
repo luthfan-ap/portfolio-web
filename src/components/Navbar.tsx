@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logoSvg from "../assets/logo-luthfan.svg";
 
 const navLinks = [
     { label: "Home", href: "#home" },
@@ -17,9 +18,9 @@ export default function Navbar() {
                     {/* Logo */}
                     <a
                         href="#home"
-                        className="text-lg font-bold tracking-tight text-white hover:text-primary-400 transition-colors"
+                        className="flex items-center gap-3 text-lg font-bold tracking-tight text-white hover:text-primary-400 transition-colors"
                     >
-                        Luthfan A.P.
+                        <img src={logoSvg} alt="Logo" className="h-7 w-auto" />
                     </a>
 
                     {/* Desktop Nav */}
