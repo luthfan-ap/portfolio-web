@@ -1,47 +1,23 @@
 export interface SkillCategory {
     category: string;
-    items: { name: string; level: number }[]; // level 0-100
+    items: string[];
 }
 
 export const skills: SkillCategory[] = [
     {
         category: "Languages",
-        items: [
-            { name: "Python", level: 85 },
-            { name: "Java", level: 80 },
-            { name: "TypeScript", level: 75 },
-            { name: "SQL", level: 85 },
-            { name: "JavaScript", level: 70 },
-        ],
+        items: ["SQL", "Python", "Java", "JavaScript", "PHP", "HTML5", "R", "TypeScript"],
     },
     {
-        category: "Data & Infrastructure",
-        items: [
-            { name: "PostgreSQL", level: 80 },
-            { name: "Apache Spark", level: 70 },
-            { name: "Docker", level: 75 },
-            { name: "Delta Lake", level: 65 },
-            { name: "Redis", level: 60 },
-        ],
+        category: "Databases",
+        items: ["PostgreSQL", "MySQL", "SQL Server", "SQLite", "BigQuery", "Neo4j", "Firebase"],
     },
     {
-        category: "Frameworks & Tools",
-        items: [
-            { name: "React", level: 75 },
-            { name: "Laravel", level: 70 },
-            { name: "Git", level: 85 },
-            { name: "Linux", level: 70 },
-            { name: "REST APIs", level: 80 },
-        ],
+        category: "Tools & Platforms",
+        items: ["Linux", "Git", "DBT", "Pandas", "Docker", "Google Cloud", "AWS", "Snowflake", "Apache Spark", "Apache Airflow", "Apache Kafka", "GitHub Actions", "Laravel", "NPM", "VS Code", "DBeaver"],
     },
     {
         category: "Concepts",
-        items: [
-            { name: "System Design", level: 75 },
-            { name: "Database Internals", level: 80 },
-            { name: "Data Pipelines", level: 75 },
-            { name: "Distributed Systems", level: 70 },
-            { name: "DevOps", level: 60 },
-        ],
+        items: ["System Design", "Database Internals", "Data Pipelines", "Distributed Systems", "DevOps"],
     },
 ];
