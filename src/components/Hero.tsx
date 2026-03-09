@@ -9,26 +9,26 @@ export default function Hero() {
 
             <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 {/* Greeting */}
-                <p className="text-primary-400 text-lg font-medium mb-4 animate-fade-in-up">
+                <p className="text-primary-500 dark:text-primary-400 text-lg font-medium mb-4 animate-fade-in-up">
                     Hi there!
                 </p>
 
                 {/* Name & Headline */}
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight animate-fade-in-up animate-delay-100">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 dark:text-white leading-tight animate-fade-in-up animate-delay-100">
                     I'm{" "}
-                    <span className="text-primary-400">
+                    <span className="text-primary-500 dark:text-primary-400">
                         Luthfan Aryananda Purwito
                     </span>
                     , an Information Systems student.
                 </h1>
 
                 {/* Tagline */}
-                <p className="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
+                <p className="mt-6 text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed animate-fade-in-up animate-delay-200">
                     Building robust systems at the intersection of{" "}
-                    <span className="text-slate-200 font-medium">data engineering</span>,{" "}
-                    <span className="text-slate-200 font-medium">systems architecture</span>,
+                    <span className="text-slate-700 dark:text-slate-200 font-medium">data engineering</span>,{" "}
+                    <span className="text-slate-700 dark:text-slate-200 font-medium">systems architecture</span>,
                     and{" "}
-                    <span className="text-slate-200 font-medium">software development</span>.
+                    <span className="text-slate-700 dark:text-slate-200 font-medium">software development</span>.
                 </p>
 
                 {/* CTA Buttons */}
@@ -48,7 +48,7 @@ export default function Hero() {
                         href="https://www.linkedin.com/in/luthfan-aryananda/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-300 border border-white/10 hover:border-white/25 rounded-lg hover:bg-white/5 transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/25 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all"
                     >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -59,7 +59,7 @@ export default function Hero() {
                         href="https://medium.com/@luthfan-ap"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-300 border border-white/10 hover:border-white/25 rounded-lg hover:bg-white/5 transition-all"
+                        className="inline-flex items-center gap-2 px-6 py-3 text-sm font-semibold text-slate-600 dark:text-slate-300 border border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/25 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all"
                     >
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
@@ -72,7 +72,7 @@ export default function Hero() {
                 <div className="mt-16 animate-fade-in-up animate-delay-400">
                     <a
                         href="#about"
-                        className="inline-flex flex-col items-center gap-2 text-slate-500 hover:text-primary-400 transition-colors"
+                        className="inline-flex flex-col items-center gap-2 text-slate-400 dark:text-slate-500 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
                     >
                         <span className="text-xs font-medium tracking-widest uppercase">
                             Scroll down

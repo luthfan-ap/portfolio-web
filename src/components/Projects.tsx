@@ -2,16 +2,16 @@ import { projects } from "../data/projects";
 
 export default function Projects() {
     return (
-        <section id="projects" className="py-24 bg-surface-900/50">
+        <section id="projects" className="py-24 bg-slate-50 dark:bg-surface-900/50 transition-colors">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="flex items-center gap-4 mb-4">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white font-mono">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white font-mono">
                         Projects
                     </h2>
                     <div className="h-px flex-1 bg-gradient-to-r from-primary-400/50 to-transparent" />
                 </div>
-                <p className="text-slate-400 mb-12 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-400 mb-12 max-w-2xl">
                     Practical work spanning distributed systems, database internals, data
                     engineering, and full-stack development.
                 </p>
@@ -21,28 +21,28 @@ export default function Projects() {
                     {projects.map((project) => (
                         <div
                             key={project.id}
-                            className="group p-6 rounded-xl border border-white/5 bg-surface-800/50 card-glow"
+                            className="group p-6 rounded-xl border border-black/5 dark:border-white/5 bg-white dark:bg-surface-800/50 card-glow transition-colors"
                         >
                             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                                 <div className="flex-1">
                                     <div className="flex items-center gap-2 mb-2">
                                         {project.featured && (
-                                            <span className="px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase text-primary-400 bg-primary-400/10 border border-primary-400/20 rounded-full">
+                                            <span className="px-2 py-0.5 text-[10px] font-semibold tracking-wider uppercase text-primary-500 dark:text-primary-400 bg-primary-400/10 border border-primary-400/20 rounded-full">
                                                 Featured
                                             </span>
                                         )}
                                     </div>
-                                    <h3 className="text-lg font-semibold text-white group-hover:text-primary-400 transition-colors">
+                                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
                                         {project.title}
                                     </h3>
-                                    <p className="mt-2 text-sm text-slate-400 leading-relaxed max-w-2xl">
+                                    <p className="mt-2 text-sm text-slate-500 dark:text-slate-400 leading-relaxed max-w-2xl">
                                         {project.description}
                                     </p>
                                     <div className="flex flex-wrap gap-2 mt-4">
                                         {project.tags.map((tag) => (
                                             <span
                                                 key={tag}
-                                                className="px-2.5 py-1 text-xs font-medium text-slate-300 bg-surface-700/50 rounded-md border border-white/5"
+                                                className="px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-surface-700/50 rounded-md border border-black/5 dark:border-white/5"
                                             >
                                                 {tag}
                                             </span>
@@ -57,7 +57,7 @@ export default function Projects() {
                                             href={project.githubUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-300 hover:text-white bg-white/5 hover:bg-white/10 rounded-lg border border-white/5 transition-all"
+                                            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10 rounded-lg border border-black/5 dark:border-white/5 transition-all"
                                         >
                                             <svg
                                                 className="w-4 h-4"
@@ -74,7 +74,7 @@ export default function Projects() {
                                             href={project.liveUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-primary-400 hover:text-white bg-primary-400/10 hover:bg-primary-400/20 rounded-lg border border-primary-400/20 transition-all"
+                                            className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium text-primary-500 dark:text-primary-400 hover:text-white bg-primary-400/10 hover:bg-primary-400/20 rounded-lg border border-primary-400/20 transition-all"
                                         >
                                             <svg
                                                 className="w-4 h-4"

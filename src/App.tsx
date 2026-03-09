@@ -1,3 +1,4 @@
+import { ThemeProvider } from "./ThemeContext";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -8,17 +9,19 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="min-h-screen bg-surface-950 text-slate-100">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <KnowledgeBase />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="min-h-screen bg-white dark:bg-surface-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <KnowledgeBase />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

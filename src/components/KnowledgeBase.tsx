@@ -23,12 +23,12 @@ export default function KnowledgeBase() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="flex items-center gap-4 mb-4">
-                    <h2 className="text-3xl sm:text-4xl font-bold text-white font-mono">
+                    <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white font-mono">
                         Knowledge Base
                     </h2>
                     <div className="h-px flex-1 bg-gradient-to-r from-primary-400/50 to-transparent" />
                 </div>
-                <p className="text-slate-400 mb-8 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-400 mb-8 max-w-2xl">
                     My learning log — ongoing experiments, lab notes, and explorations.
                     Think of it as a living notebook of ideas and technical deep-dives.
                 </p>
@@ -38,8 +38,8 @@ export default function KnowledgeBase() {
                     <button
                         onClick={() => setSelectedTag(null)}
                         className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-all ${selectedTag === null
-                            ? "text-white bg-primary-400/20 border-primary-400/40"
-                            : "text-slate-400 bg-transparent border-white/10 hover:border-white/20 hover:text-slate-300"
+                            ? "text-primary-600 dark:text-white bg-primary-400/15 dark:bg-primary-400/20 border-primary-400/30 dark:border-primary-400/40"
+                            : "text-slate-500 dark:text-slate-400 bg-transparent border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 hover:text-slate-700 dark:hover:text-slate-300"
                             }`}
                     >
                         All
@@ -51,8 +51,8 @@ export default function KnowledgeBase() {
                                 setSelectedTag(selectedTag === tag ? null : tag)
                             }
                             className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-all ${selectedTag === tag
-                                ? "text-white bg-primary-400/20 border-primary-400/40"
-                                : "text-slate-400 bg-transparent border-white/10 hover:border-white/20 hover:text-slate-300"
+                                ? "text-primary-600 dark:text-white bg-primary-400/15 dark:bg-primary-400/20 border-primary-400/30 dark:border-primary-400/40"
+                                : "text-slate-500 dark:text-slate-400 bg-transparent border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20 hover:text-slate-700 dark:hover:text-slate-300"
                                 }`}
                         >
                             {tag}
@@ -65,7 +65,7 @@ export default function KnowledgeBase() {
                     {/* Mobile sidebar toggle */}
                     <button
                         onClick={() => setSidebarOpen(!sidebarOpen)}
-                        className="lg:hidden flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-slate-300 bg-surface-800 border border-white/5 rounded-lg"
+                        className="lg:hidden flex items-center gap-2 px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-surface-800 border border-black/5 dark:border-white/5 rounded-lg"
                     >
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h7" />
@@ -87,14 +87,14 @@ export default function KnowledgeBase() {
                                         setSidebarOpen(false);
                                     }}
                                     className={`w-full text-left px-4 py-3 rounded-lg transition-all text-sm ${activeId === entry.id
-                                        ? "bg-primary-400/15 text-white border border-primary-400/30"
-                                        : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                                        ? "bg-primary-400/10 dark:bg-primary-400/15 text-slate-900 dark:text-white border border-primary-400/20 dark:border-primary-400/30"
+                                        : "text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-black/5 dark:hover:bg-white/5 border border-transparent"
                                         }`}
                                 >
                                     <span className="font-medium block leading-snug">
                                         {entry.title}
                                     </span>
-                                    <span className="text-xs text-slate-500 mt-1 block">
+                                    <span className="text-xs text-slate-400 dark:text-slate-500 mt-1 block">
                                         {new Date(entry.date).toLocaleDateString("en-US", {
                                             year: "numeric",
                                             month: "short",
@@ -107,60 +107,60 @@ export default function KnowledgeBase() {
                     </div>
 
                     {/* Content Area */}
-                    <div className="flex-1 rounded-xl border border-white/5 bg-surface-800/50 p-6 sm:p-8">
+                    <div className="flex-1 rounded-xl border border-black/5 dark:border-white/5 bg-white dark:bg-surface-800/50 p-6 sm:p-8 transition-colors">
                         {activeEntry ? (
                             <div>
                                 {/* Entry Header */}
-                                <div className="mb-6 pb-6 border-b border-white/5">
-                                    <h3 className="text-2xl font-bold text-white font-mono">
+                                <div className="mb-6 pb-6 border-b border-black/5 dark:border-white/5">
+                                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-mono">
                                         {activeEntry.title}
                                     </h3>
                                     <div className="flex flex-wrap items-center gap-3 mt-3">
-                                        <span className="text-sm text-slate-500">
+                                        <span className="text-sm text-slate-400 dark:text-slate-500">
                                             {new Date(activeEntry.date).toLocaleDateString("en-US", {
                                                 year: "numeric",
                                                 month: "long",
                                                 day: "numeric",
                                             })}
                                         </span>
-                                        <span className="text-slate-700">·</span>
+                                        <span className="text-slate-300 dark:text-slate-700">·</span>
                                         <div className="flex flex-wrap gap-1.5">
                                             {activeEntry.tags.map((tag) => (
                                                 <span
                                                     key={tag}
-                                                    className="px-2 py-0.5 text-[10px] font-medium text-primary-400 bg-primary-400/10 rounded-md"
+                                                    className="px-2 py-0.5 text-[10px] font-medium text-primary-500 dark:text-primary-400 bg-primary-400/10 rounded-md"
                                                 >
                                                     {tag}
                                                 </span>
                                             ))}
                                         </div>
                                     </div>
-                                    <p className="mt-3 text-slate-400 text-sm leading-relaxed">
+                                    <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
                                         {activeEntry.summary}
                                     </p>
                                 </div>
 
                                 {/* Entry Content */}
                                 <div
-                                    className="prose prose-invert prose-sm max-w-none
-                    prose-headings:text-white prose-headings:font-mono prose-headings:font-semibold
-                    prose-p:text-slate-300 prose-p:leading-relaxed
-                    prose-li:text-slate-300
-                    prose-strong:text-primary-400
-                    prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline
-                    prose-code:text-primary-300 prose-code:bg-surface-700 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+                                    className="prose dark:prose-invert prose-sm max-w-none
+                    prose-headings:text-slate-900 dark:prose-headings:text-white prose-headings:font-mono prose-headings:font-semibold
+                    prose-p:text-slate-600 dark:prose-p:text-slate-300 prose-p:leading-relaxed
+                    prose-li:text-slate-600 dark:prose-li:text-slate-300
+                    prose-strong:text-primary-500 dark:prose-strong:text-primary-400
+                    prose-a:text-primary-500 dark:prose-a:text-primary-400 prose-a:no-underline hover:prose-a:underline
+                    prose-code:text-primary-600 dark:prose-code:text-primary-300 prose-code:bg-slate-100 dark:prose-code:bg-surface-700 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
                     prose-ul:list-disc prose-ul:pl-5"
                                     dangerouslySetInnerHTML={{ __html: activeEntry.content }}
                                 />
 
                                 {/* External link */}
                                 {activeEntry.externalUrl && (
-                                    <div className="mt-8 pt-6 border-t border-white/5">
+                                    <div className="mt-8 pt-6 border-t border-black/5 dark:border-white/5">
                                         <a
                                             href={activeEntry.externalUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex items-center gap-2 text-sm text-primary-400 hover:text-primary-300 transition-colors"
+                                            className="inline-flex items-center gap-2 text-sm text-primary-500 dark:text-primary-400 hover:text-primary-600 dark:hover:text-primary-300 transition-colors"
                                         >
                                             Read the full article
                                             <svg
@@ -181,7 +181,7 @@ export default function KnowledgeBase() {
                                 )}
                             </div>
                         ) : (
-                            <div className="flex items-center justify-center h-full text-slate-500">
+                            <div className="flex items-center justify-center h-full text-slate-400 dark:text-slate-500">
                                 <p>Select an entry from the sidebar to begin reading.</p>
                             </div>
                         )}
