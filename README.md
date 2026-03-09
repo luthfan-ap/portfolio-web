@@ -1,6 +1,8 @@
 # Luthfan's Portfolio
 
 A personal portfolio and personal knowledge base built with **React**, **TypeScript**, **Tailwind CSS v4**, and **Vite**.
+<br>
+Can be accessed through https://luthfan.vercel.app/
 
 ## Features
 
