@@ -1,4 +1,22 @@
+import { useState, useEffect } from "react";
+
+const greetings = ["Hi there!", "Hai!", "Bonjour!"];
+
 export default function Hero() {
+    const [greetingIndex, setGreetingIndex] = useState(0);
+    const [fade, setFade] = useState(true);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setFade(false);
+            setTimeout(() => {
+                setGreetingIndex((prev) => (prev + 1) % greetings.length);
+                setFade(true);
+            }, 400);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section
             id="home"
@@ -10,7 +28,14 @@ export default function Hero() {
             <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 {/* Greeting */}
                 <p className="text-primary-500 dark:text-primary-400 text-lg font-medium mb-4 animate-fade-in-up">
-                    Hi there!
+                    <span
+                        style={{
+                            transition: "opacity 0.4s ease",
+                            opacity: fade ? 1 : 0,
+                        }}
+                    >
+                        {greetings[greetingIndex]}
+                    </span>
                 </p>
 
                 {/* Name & Headline */}
