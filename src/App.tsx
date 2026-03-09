@@ -3,7 +3,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Garden from "./components/Garden";
+import KnowledgeBase from "./components/KnowledgeBase";
 import Footer from "./components/Footer";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <About />
         <Skills />
         <Projects />
-        <Garden />
+        <KnowledgeBase />
       </main>
       <Footer />
     </div>

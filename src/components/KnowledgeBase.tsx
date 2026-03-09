@@ -1,30 +1,30 @@
 import { useState } from "react";
-import { gardenEntries } from "../data/gardenEntries";
+import { knowledgeBaseEntries } from "../data/knowledgeBaseEntries";
 
-export default function Garden() {
-    const [activeId, setActiveId] = useState(gardenEntries[0]?.id ?? "");
+export default function KnowledgeBase() {
+    const [activeId, setActiveId] = useState(knowledgeBaseEntries[0]?.id ?? "");
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
-    const activeEntry = gardenEntries.find((e) => e.id === activeId);
+    const activeEntry = knowledgeBaseEntries.find((e) => e.id === activeId);
 
     // Get all unique tags
     const allTags = Array.from(
-        new Set(gardenEntries.flatMap((e) => e.tags))
+        new Set(knowledgeBaseEntries.flatMap((e) => e.tags))
     ).sort();
 
     const [selectedTag, setSelectedTag] = useState<string | null>(null);
 
     const filteredEntries = selectedTag
-        ? gardenEntries.filter((e) => e.tags.includes(selectedTag))
-        : gardenEntries;
+        ? knowledgeBaseEntries.filter((e) => e.tags.includes(selectedTag))
+        : knowledgeBaseEntries;
 
     return (
-        <section id="garden" className="py-24">
+        <section id="knowledgeBase" className="py-24">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="flex items-center gap-4 mb-4">
                     <h2 className="text-3xl sm:text-4xl font-bold text-white font-mono">
-                        Digital Garden
+                        Knowledge Base
                     </h2>
                     <div className="h-px flex-1 bg-gradient-to-r from-primary-400/50 to-transparent" />
                 </div>
@@ -38,8 +38,8 @@ export default function Garden() {
                     <button
                         onClick={() => setSelectedTag(null)}
                         className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-all ${selectedTag === null
-                                ? "text-white bg-primary-400/20 border-primary-400/40"
-                                : "text-slate-400 bg-transparent border-white/10 hover:border-white/20 hover:text-slate-300"
+                            ? "text-white bg-primary-400/20 border-primary-400/40"
+                            : "text-slate-400 bg-transparent border-white/10 hover:border-white/20 hover:text-slate-300"
                             }`}
                     >
                         All
@@ -51,8 +51,8 @@ export default function Garden() {
                                 setSelectedTag(selectedTag === tag ? null : tag)
                             }
                             className={`px-3 py-1.5 text-xs font-medium rounded-lg border transition-all ${selectedTag === tag
-                                    ? "text-white bg-primary-400/20 border-primary-400/40"
-                                    : "text-slate-400 bg-transparent border-white/10 hover:border-white/20 hover:text-slate-300"
+                                ? "text-white bg-primary-400/20 border-primary-400/40"
+                                : "text-slate-400 bg-transparent border-white/10 hover:border-white/20 hover:text-slate-300"
                                 }`}
                         >
                             {tag}
@@ -87,8 +87,8 @@ export default function Garden() {
                                         setSidebarOpen(false);
                                     }}
                                     className={`w-full text-left px-4 py-3 rounded-lg transition-all text-sm ${activeId === entry.id
-                                            ? "bg-primary-400/15 text-white border border-primary-400/30"
-                                            : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                                        ? "bg-primary-400/15 text-white border border-primary-400/30"
+                                        : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
                                         }`}
                                 >
                                     <span className="font-medium block leading-snug">

@@ -1,73 +1,69 @@
-# React + TypeScript + Vite
+# Luthfan's Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio and personal knowledge base built with **React**, **TypeScript**, **Tailwind CSS v4**, and **Vite**.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Hero Section** — Greeting, headline, and CTA links to GitHub, LinkedIn, and Medium
+- **About** — Brief bio and key stats
+- **Skills** — Tag-based skill badges grouped by category (Languages, Databases, Tools & Platforms, Concepts)
+- **Projects** — Curated project cards with descriptions, tags, and GitHub links
+- **Personal Knowledge Base** — Documentation-style learning log with sidebar navigation, tag filtering, and external article links
+- **Active Navbar** — Scroll-aware navigation with section highlighting
+- **Responsive** — Mobile-first design with hamburger menu on small screens
+- **Dark Mode** — Sleek dark aesthetic with glassmorphism effects
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Layer     | Technology                        |
+| --------- | --------------------------------- |
+| Framework | React 19                          |
+| Language  | TypeScript                        |
+| Styling   | Tailwind CSS v4                   |
+| Bundler   | Vite 7                            |
+| Fonts     | Inter, JetBrains Mono             |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```bash
+# Clone the repository
+git clone https://github.com/luthfan-ap/portfolio-web.git
+cd portfolio-web
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+# Install dependencies
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start the dev server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── assets/              # SVG logo and static assets
+├── components/          # React components
+│   ├── Navbar.tsx       # Scroll-aware navigation bar
+│   ├── Hero.tsx         # Landing section with CTAs
+│   ├── About.tsx        # Bio and stats
+│   ├── Skills.tsx       # Tag-based skill badges
+│   ├── Projects.tsx     # Project showcase cards
+│   ├── KnowledgeBase.tsx       # Personal Knowledge Base / learning log
+│   └── Footer.tsx       # Footer with social links
+├── data/                # Content data files
+│   ├── projects.ts      # Project entries
+│   ├── skills.ts        # Skill categories
+│   └── knowledgeBaseEntries.ts # Personal Knowledge Base entries
+├── App.tsx              # Root layout
+├── main.tsx             # Entry point
+└── index.css            # Tailwind config and custom styles
 ```

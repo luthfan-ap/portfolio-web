@@ -1,15 +1,37 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logoSvg from "../assets/logo-luthfan.svg";
 
 const navLinks = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Projects", href: "#projects" },
-    { label: "Garden", href: "#garden" },
+    { label: "Knowledge Base", href: "#knowledgeBase" },
 ];
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
+
+    useEffect(() => {
+        const sectionIds = navLinks.map((link) => link.href.slice(1));
+        const observer = new IntersectionObserver(
+            (entries) => {
+                for (const entry of entries) {
+                    if (entry.isIntersecting) {
+                        setActiveSection(entry.target.id);
+                    }
+                }
+            },
+            { rootMargin: "-40% 0px -55% 0px" }
+        );
+
+        for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-surface-950/80 backdrop-blur-xl border-b border-white/5">
@@ -25,15 +47,21 @@ export default function Navbar() {
 
                     {/* Desktop Nav */}
                     <div className="hidden md:flex items-center gap-1">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                        {navLinks.map((link) => {
+                            const isActive = activeSection === link.href.slice(1);
+                            return (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${isActive
+                                        ? "text-white bg-white/5"
+                                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                                        }`}
+                                >
+                                    {link.label}
+                                </a>
+                            );
+                        })}
                         {/* Social Icons */}
                         <div className="flex items-center gap-1 ml-4">
                             <a
@@ -106,16 +134,22 @@ export default function Navbar() {
                 {/* Mobile Menu */}
                 {isOpen && (
                     <div className="md:hidden pb-4 border-t border-white/5 mt-2 pt-3">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                onClick={() => setIsOpen(false)}
-                                className="block px-4 py-2.5 text-sm font-medium text-slate-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                        {navLinks.map((link) => {
+                            const isActive = activeSection === link.href.slice(1);
+                            return (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className={`block px-4 py-2.5 text-sm font-medium rounded-lg transition-all ${isActive
+                                        ? "text-white bg-white/5"
+                                        : "text-slate-400 hover:text-white hover:bg-white/5"
+                                        }`}
+                                >
+                                    {link.label}
+                                </a>
+                            );
+                        })}
                         <a
                             href="https://github.com/luthfan-ap"
                             target="_blank"
