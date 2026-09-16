@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { useTheme } from "../ThemeContext";
+import { useTheme } from "../useTheme";
 const navLinks = [
-    { label: "Home", href: "#home" },
+    { label: "Experience", href: "#experience" },
+    { label: "Work", href: "#projects" },
     { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Knowledge Base", href: "#knowledgeBase" },
+    { label: "Writing", href: "#knowledgeBase" },
 ];
 
 export default function Navbar() {
@@ -40,6 +40,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <a
                         href="#home"
+                        aria-label="Luthfan A.P., home"
                         className="flex items-center gap-3 text-lg font-bold tracking-tight text-slate-900 dark:text-white hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
                     >
                         <svg className="h-7 w-auto" viewBox="0 0 571 1037" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -139,6 +140,8 @@ export default function Navbar() {
                             onClick={() => setIsOpen(!isOpen)}
                             className="p-2 text-slate-500 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white rounded-lg hover:bg-black/5 dark:hover:bg-white/5 transition-all"
                             aria-label="Toggle menu"
+                            aria-expanded={isOpen}
+                            aria-controls="portfolio-mobile-menu"
                         >
                             <svg
                                 className="w-6 h-6"
@@ -168,7 +171,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu */}
                 {isOpen && (
-                    <div className="md:hidden pb-4 border-t border-black/5 dark:border-white/5 mt-2 pt-3">
+                    <div id="portfolio-mobile-menu" className="md:hidden pb-4 border-t border-black/5 dark:border-white/5 mt-2 pt-3">
                         {navLinks.map((link) => {
                             const isActive = activeSection === link.href.slice(1);
                             return (
